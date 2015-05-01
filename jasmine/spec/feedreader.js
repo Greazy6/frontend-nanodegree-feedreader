@@ -24,19 +24,71 @@ $(function() {
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
-        });
+        })
 
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
+        it('checks if there is a url', function(){
+            for( var link in allFeeds){
+            expect(allFeeds[link].url).toBeDefined();
+            expect(allFeeds[link].url.length).not.toBe(0);
+        }
+        })
 
+        it('checks if their is a name', function(){
+            for(var name in allFeeds){
+                expect(allFeeds[name].name).toBeDefined();
+                expect(allFeeds[name].name).not.toBe(0);
+            }
+        })
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+    });
+    describe('Menu check', function(){
+        it('checks if menu is hidden', function(){
+            expect($("body").hasClass("menu-hidden")).toBeTruthy();
+        })
+
+    describe('checking menu click', function(){
+        menuIcon = $('.menu-icon-link');
+        beforeEach(function(){
+
+            menuIcon.trigger("click")
+
+        })
+
+        it('checks if menu is showing', function(){
+            expect($("body").hasClass("menu-hidden")).toBeFalsy();
+        })
+
+        it('checks if menu is not showing', function(){
+            expect($("body").hasClass("menu-hidden")).toBeTruthy();
+        })
+    })
+
+    describe('checking intial entries', function(){
+        var entries;
+        beforeEach(function(done){
+            entries =$('.feed a').children('entry');
+            loadFeed(2, done);
+        });
+        it('should be new stuff', function(done){
+            expect($('.feed a').children('.entry')).not.toBe(entries);
+            done();
+        });
+        afterAll(function(done){
+            loadFeed(0,done);
+        });
+
+    })
+
+        
     });
 
 
