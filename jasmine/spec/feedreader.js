@@ -39,9 +39,9 @@ $(function() {
         })
 
         it('checks if their is a name', function(){
-            for(var name in allFeeds){
-                expect(allFeeds[name].name).toBeDefined();
-                expect(allFeeds[name].name).not.toBe(0);
+            for(var e in allFeeds){
+                expect(allFeeds[e].name).toBeDefined();
+                expect(allFeeds[e].name).not.toBe(0);
             }
         })
 
@@ -72,7 +72,20 @@ $(function() {
         })
     })
 
-    describe('checking intial entries', function(){
+    describe('Initial Entries', function(){
+        beforeEach(function(done){
+            loadFeed(0, done);
+        });
+        it('has added entries', function(done){
+            expect($('.feed').children().length).toBeGreaterThan(0);
+            done();
+        });
+    });
+        
+
+    
+
+    describe('New Feed Selection', function(){
         var entries;
         beforeEach(function(done){
             entries =$('.feed a').children('entry');
