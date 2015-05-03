@@ -27,16 +27,19 @@ $(function() {
         })
 
 
-        /* TODO: Write a test that loops through each feed
-         * in the allFeeds object and ensures it has a URL defined
-         * and that the URL is not empty.
-         */
+        
+         
+         /* This will loop thru allFeeds object and make sure it has a defined url and that it is not empty*/
+
         it('checks if there is a url', function(){
             for( var link in allFeeds){
             expect(allFeeds[link].url).toBeDefined();
             expect(allFeeds[link].url.length).not.toBe(0);
         }
         })
+
+        /* this loops thur allFeedd object and ensure that it has defined anmes and is not empty*/
+
 
         it('checks if their is a name', function(){
             for(var e in allFeeds){
@@ -45,32 +48,36 @@ $(function() {
             }
         })
 
-        /* TODO: Write a test that loops through each feed
-         * in the allFeeds object and ensures it has a name defined
-         * and that the name is not empty.
-         */
     });
+
+/* this will test that the menu element is hidden by defalut*/
+
     describe('Menu check', function(){
         it('checks if menu is hidden', function(){
             expect($("body").hasClass("menu-hidden")).toBeTruthy();
         })
-
+/*these next section will check when button is clicked*/
     describe('checking menu click', function(){
         menuIcon = $('.menu-icon-link');
         beforeEach(function(){
-
-            menuIcon.trigger("click")
+        menuIcon.trigger("click")
 
         })
+        /*click once*/
+
 
         it('checks if menu is showing', function(){
             expect($("body").hasClass("menu-hidden")).toBeFalsy();
         })
+        /*click again*/
 
         it('checks if menu is not showing', function(){
             expect($("body").hasClass("menu-hidden")).toBeTruthy();
         })
     })
+
+    /*This test to ensure that when the loadFeed fucntion is called that its work is completed*/
+
 
     describe('Initial Entries', function(){
         beforeEach(function(done){
@@ -83,7 +90,7 @@ $(function() {
     });
         
 
-    
+    /*and this checks to ensure a new feed is loaded and content has changes*/
 
     describe('New Feed Selection', function(){
         var entries;
@@ -91,6 +98,8 @@ $(function() {
             entries =$('.feed a').children('entry');
             loadFeed(2, done);
         });
+        /*After loadFeeds runs .feed should have new entries*/
+
         it('should be new stuff', function(done){
             expect($('.feed a').children('.entry')).not.toBe(entries);
             done();
