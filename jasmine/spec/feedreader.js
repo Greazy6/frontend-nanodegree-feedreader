@@ -77,9 +77,11 @@ $(function() {
         });
     });
 
-    /*This test to ensure that when the loadFeed fucntion is called that its work is completed*/
+    
+    
 
 
+/*This test ensures when the loadFeed function is called and completes its work, there is at least a single .entry element within the .feed container.*/
     describe('Initial Entries', function(){
         beforeEach(function(done){
             loadFeed(0, done);
