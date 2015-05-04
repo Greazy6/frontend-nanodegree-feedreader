@@ -24,7 +24,7 @@ $(function() {
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
-        })
+        });
 
 
         
@@ -36,7 +36,7 @@ $(function() {
             expect(allFeeds[link].url).toBeDefined();
             expect(allFeeds[link].url.length).not.toBe(0);
         }
-        })
+        });
 
         /* this loops thur allFeedd object and ensure that it has defined anmes and is not empty*/
 
@@ -46,7 +46,7 @@ $(function() {
                 expect(allFeeds[e].name).toBeDefined();
                 expect(allFeeds[e].name).not.toBe(0);
             }
-        })
+        });
 
     });
 
@@ -55,26 +55,26 @@ $(function() {
     describe('Menu check', function(){
         it('checks if menu is hidden', function(){
             expect($("body").hasClass("menu-hidden")).toBeTruthy();
-        })
+        });
 /*these next section will check when button is clicked*/
     describe('checking menu click', function(){
         menuIcon = $('.menu-icon-link');
         beforeEach(function(){
-        menuIcon.trigger("click")
+        menuIcon.trigger("click");
 
-        })
+        });
         /*click once*/
 
 
         it('checks if menu is showing', function(){
             expect($("body").hasClass("menu-hidden")).toBeFalsy();
-        })
+        });
         /*click again*/
 
         it('checks if menu is not showing', function(){
             expect($("body").hasClass("menu-hidden")).toBeTruthy();
-        })
-    })
+        });
+    });
 
     /*This test to ensure that when the loadFeed fucntion is called that its work is completed*/
 
@@ -108,7 +108,7 @@ $(function() {
             loadFeed(0,done);
         });
 
-    })
+    });
 
         
     });
