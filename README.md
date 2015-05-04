@@ -6,7 +6,7 @@ To run this application please fork these files from my github page Greazy6 name
 
 Then open index.html file.
 
-Jasmine will run a series of test to ensure the application is working well.
+Jasmine will run a series of test to ensure that the application is working well.
 
 Once Jasmine is done you will see there are no errors, because it will be displayed on the page
 
