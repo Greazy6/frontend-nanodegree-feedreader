@@ -2,7 +2,7 @@ Project 6
 
 This is my project 6 where I have used Jasmine to run som tests.
 
-To run this application please fork these files from my github page Greazy6 named frontend-nanodegree-feedreader and clone the file to your hard drive.
+To run this application please fork these files from my github page Greazy6 the URL is https://github.com/Greazy6/frontend-nanodegree-feedreader and clone the file to your hard drive.
 
 Then open index.html file.
 

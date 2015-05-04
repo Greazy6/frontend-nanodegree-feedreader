@@ -56,6 +56,7 @@ $(function() {
         it('checks if menu is hidden', function(){
             expect($("body").hasClass("menu-hidden")).toBeTruthy();
         });
+    });
 /*these next section will check when button is clicked*/
     describe('checking menu click', function(){
         menuIcon = $('.menu-icon-link');
@@ -111,7 +112,7 @@ $(function() {
     });
 
         
-    });
+    
 
 
     /* TODO: Write a new test suite named "The menu" */
