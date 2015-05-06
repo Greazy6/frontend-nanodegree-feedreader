@@ -29,26 +29,42 @@ $(function() {
 
         
          
-         /* This will loop thru allFeeds object and make sure it has a defined url and that it is not empty*/
+         /* This will loop thru allFeeds object and make sure it has a defined url and
+          that it is not empty*/
 
-        it('checks if there is a url', function(){
-            for( var link in allFeeds){
-            expect(allFeeds[link].url).toBeDefined();
-            expect(allFeeds[link].url.length).not.toBe(0);
-            }
+        //it('checks if there is a url', function(){
+            //for( var link in allFeeds){
+            //expect(allFeeds[link].url).toBeDefined();
+            //expect(allFeeds[link].url.length).not.toBe(0);
+            //}
+        it('checks if there is a URL',function(){
+            allFeeds.forEach(function(feed){
+                expect(feed.url).toBeDefined();
+                expect(feed.url.length).not.toBe(0);
+            });
         });
 
-        /* this loops thur allFeedd object and ensure that it has defined anmes and is not empty*/
 
 
-        it('checks if their is a name', function(){
-            for(var e in allFeeds){
-                expect(allFeeds[e].name).toBeDefined();
-                expect(allFeeds[e].name).not.toBe(0);
-            }
+        /* this loops thur allFeedd object and ensure that it has defined names and is not empty*/
+
+
+        //it('checks if their is a name', function(){
+            //for(var e in allFeeds){
+                //expect(allFeeds[e].name).toBeDefined();
+                //expect(allFeeds[e].name).not.toBe(0);
+            //}
+        //});
+        it('checks if there is a name', function(){
+            allFeeds.forEach(function(feed){
+                expect(feed.name).toBeDefined();
+                expect(feed.name.length).not.toBe(0);
+            });
         });
 
-    });
+        });
+
+    
 
 /* this will test that the menu element is hidden by defalut*/
 
