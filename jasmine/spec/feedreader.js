@@ -31,12 +31,6 @@ $(function() {
          
          /* This will loop thru allFeeds object and make sure it has a defined url and
           that it is not empty*/
-
-        //it('checks if there is a url', function(){
-            //for( var link in allFeeds){
-            //expect(allFeeds[link].url).toBeDefined();
-            //expect(allFeeds[link].url.length).not.toBe(0);
-            //}
         it('checks if there is a URL',function(){
             allFeeds.forEach(function(feed){
                 expect(feed.url).toBeDefined();
@@ -48,13 +42,6 @@ $(function() {
 
         /* this loops thur allFeedd object and ensure that it has defined names and is not empty*/
 
-
-        //it('checks if their is a name', function(){
-            //for(var e in allFeeds){
-                //expect(allFeeds[e].name).toBeDefined();
-                //expect(allFeeds[e].name).not.toBe(0);
-            //}
-        //});
         it('checks if there is a name', function(){
             allFeeds.forEach(function(feed){
                 expect(feed.name).toBeDefined();
@@ -93,13 +80,9 @@ $(function() {
         });
     });
 
-    
-    
-
-
-/*This test ensures when the loadFeed function is called and completes 
-its work, there is at least a single .entry element within 
-the .feed container.*/
+    /*This test ensures when the loadFeed function is called and completes 
+    its work, there is at least a single .entry element within 
+    the .feed container.*/
     describe('Initial Entries', function(){
         beforeEach(function(done){
             loadFeed(0, done);
@@ -131,9 +114,4 @@ the .feed container.*/
 
     });
 
-        
-    
-
-
-    
 }());
