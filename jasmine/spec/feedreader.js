@@ -62,9 +62,9 @@ $(function() {
     });
 /*these next section will check when button is clicked*/
     describe('checking menu click', function(){
-        menuIcon = $('.menu-icon-link');
+        var menuIcon = $('.menu-icon-link');
         beforeEach(function(){
-        menuIcon.trigger("click");
+        menuIcon.click();
 
         });
         /*click once*/
@@ -97,9 +97,10 @@ $(function() {
     /*and this checks to ensure a new feed is loaded and content has changes*/
 
     describe('New Feed Selection', function(){
-        var entries = $('.feed a').children('entry');
+        var entries;
+        console.log(entries);
         beforeEach(function(done){
-            //entries =$('.feed a').children('entry');
+            entries = $('.feed a').children('.entry');
             loadFeed(2, done);
         });
         /*After loadFeeds runs .feed should have new entries*/
