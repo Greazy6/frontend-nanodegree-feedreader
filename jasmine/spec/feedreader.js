@@ -88,7 +88,7 @@ $(function() {
             loadFeed(0, done);
         });
         it('has added entries', function(done){
-            expect($('.feed').children().length).toBeGreaterThan(0);
+            expect($('.feed').find('.entry').length).toBeGreaterThan(0);
             done();
         });
     });
