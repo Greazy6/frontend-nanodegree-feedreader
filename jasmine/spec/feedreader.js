@@ -97,7 +97,7 @@ $(function() {
     /*and this checks to ensure a new feed is loaded and content has changes*/
 
     describe('New Feed Selection', function(){
-        var entries = $('.feed a').children('entry');;
+        var entries = $('.feed a').children('entry');
         beforeEach(function(done){
             //entries =$('.feed a').children('entry');
             loadFeed(2, done);
